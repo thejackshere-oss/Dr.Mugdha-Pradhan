@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mugdha Pradhan | Cosmetic & Plastic Surgeon in Pune</title>
+    <meta name="description" content="Dr. Mugdha Pradhan, M.Ch Plastic Surgeon in Pune. Specializing in Rhinoplasty, Hair Transplant, and Cosmetic Surgery. 20+ years experience.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #d4af37; /* Elegant Gold */
+            --text: #333;
+            --light: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .nav-links a { text-decoration: none; color: var(--primary); margin-left: 2rem; font-weight: 600; font-size: 0.9rem; }
+        
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 4rem 8%;
+            background: linear-gradient(135deg, #fff 50%, #f2f2f2 50%);
+            min-height: 80vh;
+            flex-wrap: wrap;
+        }
+        .hero-left { flex: 1; min-width: 300px; text-align: center; position: relative; }
+        .hero-left img.profile { width: 80%; max-width: 400px; filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.1)); }
+        
+        .hero-right { flex: 1.2; padding-left: 4rem; min-width: 300px; }
+        .hero-right h1 { font-size: 3.5rem; color: var(--primary); margin-bottom: 0.5rem; }
+        .hero-right .subtitle { font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem; font-weight: 600; }
+        .hero-right .stats { display: flex; gap: 2rem; margin: 1.5rem 0; }
+        .stat-box { border-left: 3px solid var(--accent); padding-left: 1rem; }
+
+        /* Button Styling */
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: 1rem;
+            border: 2px solid var(--primary);
+        }
+        .cta-btn:hover { background: transparent; color: var(--primary); }
+        .cta-whatsapp { background: #25D366; border-color: #25D366; margin-left: 10px;}
+
+        /* Award Slider */
+        .award-slider {
+            width: 100%;
+            overflow: hidden;
+            background: #fff;
+            padding: 20px 0;
+            margin-top: 2rem;
+        }
+        .award-track {
+            display: flex;
+            width: calc(250px * 10);
+            animation: scroll 20s linear infinite;
+        }
+        .award-track img { width: 200px; height: 150px; object-fit: cover; margin: 0 25px; border-radius: 8px; }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 5)); }
+        }
+
+        /* About Section */
+        .section-padding { padding: 5rem 8%; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .about-text p { margin-bottom: 1rem; font-size: 1.05rem; }
+        .speciality-tag { display: inline-block; background: #eef2f3; padding: 5px 15px; border-radius: 20px; margin: 5px; font-size: 0.85rem; }
+
+        /* Treatments Grid */
+        .treatments { background: var(--light); text-align: center; }
+        .treatment-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; margin-top: 3rem; 
+        }
+        .treatment-card { 
+            background: white; padding: 2rem; border-radius: 15px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s;
+        }
+        .treatment-card:hover { transform: translateY(-10px); background: var(--primary); color: white; }
+
+        /* Review Slider */
+        .reviews { overflow: hidden; position: relative; background: var(--primary); color: white; }
+        .review-track { display: flex; animation: scrollReview 40s linear infinite; padding: 3rem 0; }
+        .review-card { 
+            min-width: 400px; background: rgba(255,255,255,0.1); 
+            margin: 0 20px; padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);
+        }
+        @keyframes scrollReview {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-2000px); }
+        }
+
+        /* Map Section */
+        .map-container { height: 450px; width: 100%; border: none; filter: grayscale(0.2); }
+
+        /* Footer */
+        footer { background: #1a252f; color: white; padding: 4rem 8% 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-right h1 { font-size: 2.5rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .hero { text-align: center; }
+            .hero-right { padding-left: 0; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Dr. Mugdha Pradhan</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#treatments">Treatments</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-left">
+            <img src="mugdha.png" alt="Dr. Mugdha Pradhan" class="profile">
+            <div class="award-slider">
+                <div class="award-track">
+                    <img src="award1.jpg" alt="Award 1">
+                    <img src="award2.jpg" alt="Award 2">
+                    <img src="award3.jpg" alt="Award 3">
+                    <img src="award1.jpg" alt="Award 1">
+                    <img src="award2.jpg" alt="Award 2">
+                </div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <h1>Dr. Mugdha Pradhan</h1>
+            <p class="subtitle">Cosmetic & Plastic Surgeon</p>
+            <p><em>"Be Your Best Self"</em></p>
+            <div class="stats">
+                <div class="stat-box"><strong>20+ Years</strong><br>Experience</div>
+                <div class="stat-box"><strong>4.8 ★</strong><br>Rating</div>
+            </div>
+            <p>MBBS, DNB (Surgery), M.Ch (Plastic Surgery)</p>
+            <a href="tel:09284315546" class="cta-btn"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+            <a href="https://wa.me/919284315546" class="cta-btn cta-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </section>
+
+    <section class="section-padding" id="about">
+        <div class="grid-2">
+            <div class="about-text">
+                <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Expertise & Background</h2>
+                <p>Dr. Mugdha is a qualified Plastic and Cosmetic Surgeon with over 8 years of specialized Plastic Surgical experience. She specializes in hand surgery, aesthetic surgery, maxillofacial & craniofacial surgery, and reconstructive surgery.</p>
+                <p>She is adept at performing skin grafts, flaps, ear & nose reconstruction, and is highly proficient in anti-aging solutions and scar treatments.</p>
+                
+                <h3 style="margin-top: 2rem;">Education</h3>
+                <ul style="list-style: none; margin-top: 10px;">
+                    <li><i class="fas fa-graduation-cap" style="color: var(--accent);"></i> M. Ch. (Plastic Surgery) - AFMC, Pune (2016)</li>
+                    <li><i class="fas fa-graduation-cap" style="color: var(--accent);"></i> DNB - General Surgery - Nagercoil (2009)</li>
+                    <li><i class="fas fa-graduation-cap" style="color: var(--accent);"></i> MBBS - Rajiv Gandhi Medical College (2005)</li>
+                </ul>
+            </div>
+            <div class="about-info" style="background: #fff; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <h3 style="color: var(--primary);">Memberships</h3>
+                <div style="margin: 1rem 0;">
+                    <span class="speciality-tag">Association of Plastic Surgeons of India</span>
+                    <span class="speciality-tag">Indian Association of Aesthetic Plastic Surgeons</span>
+                    <span class="speciality-tag">Association of Medical Consultants</span>
+                </div>
+                <h3 style="margin-top: 1.5rem;">Languages</h3>
+                <p>English, Marathi, Hindi, Tamil</p>
+                <div style="margin-top: 2rem; border-top: 1px solid #eee; padding-top: 1rem;">
+                    <p><strong>Awards:</strong> Awarded by UAE's famous surgeon Dr. Sanjay Parashar at India's largest Aesthetic conference.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding treatments" id="treatments">
+        <h2 style="font-size: 2.5rem; color: var(--primary);">Advanced Treatments</h2>
+        <p>Providing world-class cosmetic solutions in Pune</p>
+        <div class="treatment-grid">
+            <div class="treatment-card"><i class="fas fa-user-md fa-2x"></i><h3>Rhinoplasty</h3></div>
+            <div class="treatment-card"><i class="fas fa-cut fa-2x"></i><h3>Hair Transplant</h3></div>
+            <div class="treatment-card"><i class="fas fa-magic fa-2x"></i><h3>Laser Skin Treatment</h3></div>
+            <div class="treatment-card"><i class="fas fa-face-smile fa-2x"></i><h3>Anti-Aging</h3></div>
+            <div class="treatment-card"><i class="fas fa-burn fa-2x"></i><h3>Burn Treatment</h3></div>
+            <div class="treatment-card"><i class="fas fa-syringe fa-2x"></i><h3>PRP Therapy</h3></div>
+            <div class="treatment-card"><i class="fas fa-hand-holding-medical fa-2x"></i><h3>Cyst Removal</h3></div>
+            <div class="treatment-card"><i class="fas fa-child fa-2x"></i><h3>Cleft Lip Surgery</h3></div>
+        </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+        <div style="text-align: center; padding-top: 3rem;">
+            <h2>Patient Testimonials</h2>
+            <p>4.8/5 based on patient satisfaction</p>
+        </div>
+        <div class="review-track">
+            <div class="review-card">
+                <h4>Amol Kuber <span style="color: var(--accent);">★★★★★</span></h4>
+                <p>"I visited Dr. Mughda for my 2.5-year-old's burn injury. Her kindness and expertise made the recovery process smooth. Highly recommended for pediatric care..."</p>
+            </div>
+            <div class="review-card">
+                <h4>Aditi Sapra <span style="color: var(--accent);">★★★★★</span></h4>
+                <p>"Performed rhinoplasty and fat grafting. Results were incredibly natural. She is truly remarkable and highly skilled in her field..."</p>
+            </div>
+            <div class="review-card">
+                <h4>Komal Dang <span style="color: var(--accent);">★★★★★</span></h4>
+                <p>"Had a deep wound on my face. Dr. Mugdha's composed behavior and professional stitching left me relaxed. 3 months later, the wound has faded well..."</p>
+            </div>
+            <div class="review-card">
+                <h4>Anshuma Patni <span style="color: var(--accent);">★★★★★</span></h4>
+                <p>"Consulted for a cyst on my back. She listened attentively and personally followed up for post-surgery care. Patient and clear..."</p>
+            </div>
+        </div>
+        <div style="text-align: center; padding-bottom: 3rem;">
+            <a href="https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID" class="cta-btn" style="background: var(--accent); border: none;">Write a Review</a>
+        </div>
+    </section>
+
+    <section class="section-padding" id="contact">
+        <div class="grid-2">
+            <div>
+                <h2 style="color: var(--primary);">Contact Roots Wellness Clinic</h2>
+                <p style="margin: 1rem 0;"><i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> Second Floor, B-203, Amrut Villa, Baner - Balewadi Rd, Pune 411069</p>
+                <p style="margin: 1rem 0;"><i class="fas fa-clock" style="color: var(--accent);"></i> 9:00 AM - 9:00 PM | 24/7 Emergencies</p>
+                <p style="margin: 1rem 0;"><i class="fas fa-phone" style="color: var(--accent);"></i> 09284315546</p>
+                <p style="margin: 1rem 0;"><i class="fas fa-envelope" style="color: var(--accent);"></i> dr.MugdhaPradhan@gmail.com</p>
+            </div>
+            <div>
+                <iframe class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m18!1m12!1m3!1d3782.261!2d73.778!3d18.559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDMzJzMyLjQiTiA3M8KwNDYnNDAuOCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Dr. Mugdha Pradhan</h3>
+                <p>Enhancing beauty through surgical excellence and compassionate care.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <p><a href="#about" style="color: white; text-decoration: none;">Biography</a></p>
+                <p><a href="#treatments" style="color: white; text-decoration: none;">All Procedures</a></p>
+            </div>
+            <div>
+                <h3>Emergency</h3>
+                <p>Available 24x7 for trauma and burns.</p>
+                <a href="tel:09284315546" style="color: var(--accent); font-size: 1.2rem; font-weight: bold;">09284315546</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; font-size: 0.8rem;">
+            © 2024 Dr. Mugdha Pradhan. Designed for Excellence.
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
